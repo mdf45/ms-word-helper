@@ -16,7 +16,7 @@ namespace MyTest
         {
             string file = string.Empty;
 
-            while (!File.Exists(file))
+            while (!File.Exists(file) || !file.Contains(".doc"))
             {
                 if (file != string.Empty)
                 {
