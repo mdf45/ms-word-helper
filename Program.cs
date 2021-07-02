@@ -5,7 +5,7 @@ namespace MyTest
 {
     class Program
     {
-        static Models.WordHelper _wordHelper;
+        static readonly Models.WordHelper _wordHelper;
 
         static Program()
         {
