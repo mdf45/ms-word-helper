@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -216,7 +217,7 @@ namespace MyTest.Models
         {
             var defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\";
 
-            if (string.IsNullOrWhiteSpace(path) || !path.Contains(":")) return defaultPath;
+            if (!Directory.Exists(path)) return defaultPath;
             var p = path.Replace("/", @"\");
             return p[^1] != '\\' ? p + '\\' : p;
         }
