@@ -88,7 +88,17 @@ namespace MyTest.Models
                 Console.Write("Путь: ");
                 var pathToSave = VerifityPath(Console.ReadLine());
 
-                _app.ActiveDocument.SaveAs2(pathToSave + DateTime.Now.ToString("HH.mm.ss dd.MM.yy") + " myDock.docx");
+                Console.Write("Выберите формат сохранения. 1 - pdf, 2 - docx: ");
+                var format = Console.ReadLine();
+
+                if (format != "1")
+                {
+                    _app.ActiveDocument.SaveAs2(pathToSave + DateTime.Now.ToString("HH.mm.ss dd.MM.yy") + " myDock.docx");
+                }
+                else
+                {
+                    _app.ActiveDocument.ExportAsFixedFormat(pathToSave + DateTime.Now.ToString("HH.mm.ss dd.MM.yy") + " myDock.pdf", WdExportFormat.wdExportFormatPDF);
+                }
             }
             catch (Exception ex)
             {
