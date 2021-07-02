@@ -364,7 +364,7 @@ FodyWeavers.xsd
 
 # CUSTOM 
 
-*.gitattributes
-*.gitignore
+.gitattributes
+.gitignore
 *.csproj
 *.sln
